@@ -26,6 +26,7 @@ document.querySelector('.check').addEventListener('click', function() {
         document.querySelector('.message').textContent = '🎉 Correct Number!';
         document.querySelector('body').style.backgroundColor = '#60b347';
         document.querySelector('.number').style.width = '30rem';
+        document.querySelector('.guess').disabled = true;
         if(score>highscore){
             highscore = score;
             document.querySelector('.highscore').textContent = highscore;
@@ -57,5 +58,18 @@ document.querySelector('.check').addEventListener('click', function() {
             document.querySelector('.score').textContent = 0;
         }
         
-    }
+    }   
+});
+
+
+document.querySelector('.again').addEventListener('click', function () {
+    score = 20;
+    document.querySelector('.message').textContent = 'Start guessing...';
+    document.querySelector('.score').textContent = score;
+    document.querySelector('.number').textContent = '?';
+    document.querySelector('.guess').value = '';
+  
+    document.querySelector('body').style.backgroundColor = '#222';
+    document.querySelector('.number').style.width = '15rem';
+    console.log('again');
 });
